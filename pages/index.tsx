@@ -1,4 +1,4 @@
-import { Container, Group, Image, Stack, Text, Title } from "@mantine/core";
+import { Container, Text, Title } from "@mantine/core";
 import useStyles from "@styles/styles";
 
 export default function Home() {

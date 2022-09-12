@@ -1,4 +1,4 @@
-import { Sx, Text, UnstyledButton } from "@mantine/core";
+import { Text, UnstyledButton } from "@mantine/core";
 
 export interface NavButtonProps {
 	text: string;
