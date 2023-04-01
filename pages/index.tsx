@@ -5,14 +5,7 @@ export default function Home() {
   const { classes } = useStyles();
 
   return (
-    <Box
-      sx={(theme) => ({
-        backgroundColor:
-          theme.colorScheme === "dark"
-            ? theme.colors.dark[6]
-            : theme.colors.gray[3],
-      })}
-    >
+    <Box sx={() => ({ backgroundColor: "#2A2C2D" }) }>
       <Container size="md" p="xl">
         <Title className={classes.title}>
           Hi, I'm{" "}

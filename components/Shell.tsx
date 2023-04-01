@@ -8,7 +8,7 @@ import {
   Header,
   MediaQuery,
   Navbar,
-  Stack
+  Stack,
 } from "@mantine/core";
 import { AppProps } from "next/app";
 import { useRouter } from "next/router";
@@ -24,42 +24,49 @@ export default function Shell(props: AppProps) {
   return (
     <AppShell
       padding={0}
+      sx={() => ({ backgroundColor: "#EEEEEE" })}
       navbar={
         <>
           {opened && (
-            <Navbar p="md">
-              <Stack>
-                <NavButton text="Home" />
-                <NavButtons />
-              </Stack>
-            </Navbar>
+            <MediaQuery largerThan="md" styles={{ display: "none" }}>
+              <Navbar
+                p="md"
+                withBorder={false}
+                sx={() => ({ backgroundColor: "#2A2C2D" })}
+              >
+                <Stack>
+                  <NavButton text="Home" />
+                  <NavButtons />
+                </Stack>
+              </Navbar>
+            </MediaQuery>
           )}
         </>
       }
       header={
         <Header
-          height={70} px="md" py="sm"
-          sx={(theme) => ({
-            backgroundColor:
-              theme.colorScheme === "dark"
-                ? theme.colors.dark[5]
-                : theme.colors.dark[5]
-          })}
+          height={70}
+          px="md"
+          py="sm"
+          withBorder={false}
+          sx={() => ({ backgroundColor: "#232526" })}
         >
           <MediaQuery largerThan="md" styles={{ display: "none" }}>
             <Group position="apart">
               <Burger
                 opened={opened}
                 onClick={() => setOpened((o) => !o)}
+                title="Toggle Navigation"
                 size="sm"
+                color="#EEEEEE"
               />
-              <NavButton text="Kai Nakamura" markActive={false} />
+              <NavButton text="Kai Nakamura" isHomePage={true} />
               <ColorSchemeToggle />
             </Group>
           </MediaQuery>
           <MediaQuery smallerThan="md" styles={{ display: "none" }}>
             <Group position="apart">
-              <NavButton text="Kai Nakamura" markActive={false} />
+              <NavButton text="Kai Nakamura" isHomePage={true} />
               <Group spacing={60}>
                 <NavButtons />
                 <ColorSchemeToggle />

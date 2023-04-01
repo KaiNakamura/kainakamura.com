@@ -6,13 +6,13 @@ import useStyles from "@styles/styles";
 export interface NavButtonProps {
   text: string;
   href?: string;
-  markActive?: boolean;
+  isHomePage?: boolean;
 }
 
 export default function NavButton({
   text,
   href = "/",
-  markActive = true,
+  isHomePage = false,
 }: NavButtonProps) {
   const { classes } = useStyles();
   const router = useRouter();
@@ -24,9 +24,9 @@ export default function NavButton({
           className={
             classes.navButton +
             " " +
-            (markActive && router.pathname == href
-              ? classes.navButtonActive
-              : "")
+            (router.pathname == href ? classes.navButtonActive : "") +
+            " " +
+            (isHomePage ? classes.navButtonHomePage : "")
           }
         >
           {text}
