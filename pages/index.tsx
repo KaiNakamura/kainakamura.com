@@ -1,22 +1,15 @@
-import { Box, Container, Text, Title } from "@mantine/core";
-import useStyles from "@styles/styles";
+import Head from "next/head";
 
 export default function Home() {
-  const { classes } = useStyles();
-
   return (
-    <Box sx={() => ({ backgroundColor: "#2A2C2D" }) }>
-      <Container size="md" p="xl">
-        <Title className={classes.title}>
-          Hi, I'm{" "}
-          <Text inherit variant="gradient" component="span">
-            Kai
-          </Text>
-        </Title>
-        <Title className={classes.subTitle} color="dimmed">
-          Software Dev / Student
-        </Title>
-      </Container>
-    </Box>
+    <>
+      <Head>
+        <title>Kai Nakamura</title>
+        <meta name="description" content="Kai Nakamura's Portfolio" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <main></main>
+    </>
   );
 }
