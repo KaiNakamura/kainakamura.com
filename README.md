@@ -1,38 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+[![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://github.com/KaiNakamura/kainakamura.com/blob/master/LICENSE)
+[![Node.js CI/CD](https://github.com/KaiNakamura/kainakamura.com/actions/workflows/node.js.yml/badge.svg)](https://github.com/KaiNakamura/kainakamura.com/actions/workflows/node.js.yml)
 
-## Getting Started
+# [kainakamura.com](https://kainakamura.com)
 
-First, run the development server:
+## Table of Contents
 
-```bash
+- [About](#about)
+- [Installation](#installation)
+- [Issues](#issues)
+- [License](#license)
+
+## About
+
+Welcome to the repository for my personal portfolio website. I'll mostly be using this website to give a little info about myself, to show off some of the stuff I've been working on lately, and share my contact information.
+
+## Installation
+
+This project was made using [Next.js](https://nextjs.org). To run this app you will also need [Node.js](https://nodejs.org).
+
+```
+git clone https://github.com/KaiNakamura/kainakamura.com.git
+cd kainakamura.com
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Issues
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+To report a bug or to request a feature go [here](https://github.com/KaiNakamura/kainakamura.com/issues).
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## License
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Distributed under the [MIT License](https://github.com/KaiNakamura/kainakamura.com/blob/master/LICENSE).
