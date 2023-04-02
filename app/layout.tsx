@@ -1,0 +1,24 @@
+import Footer from "@components/Footer";
+import NavBar from "@components/Navbar";
+import "@styles/globals.css";
+
+export const metadata = {
+  title: "Kai Nakamura",
+  description: "Personal Portfolio",
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <body className="min-h-screen bg-white text-gray-dark">
+        <NavBar />
+        {children}
+        <Footer />
+      </body>
+    </html>
+  );
+}
