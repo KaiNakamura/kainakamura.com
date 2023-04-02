@@ -1,36 +1,27 @@
 import Card from "@components/Card";
-import { ExternalLink } from "@components/ExternalLink";
 import Hero from "@components/Hero";
 import { Link } from "@components/Link";
 import { getProjectMetadata } from "@components/ProjectMetadata";
 import { Text } from "@components/Text";
-import Head from "next/head";
 
 export default function Home() {
   const projects = getProjectMetadata();
 
   return (
     <>
-      <Head>
-        <title>Kai Nakamura</title>
-        <meta name="description" content="Kai Nakamura's Portfolio" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <Hero />
       <div className="flex flex-col gap-10 p-10 md:gap-14 md:p-14 xl:gap-18 xl:p-18">
         <section id="about" className="max-w-3xl m-auto flex flex-col gap-8">
           <Text>
-            I&apos;m a student at{" "}
-            <ExternalLink href="https://www.wpi.edu/">WPI</ExternalLink>{" "}
+            I&apos;m a student at <Link href="https://www.wpi.edu/">WPI</Link>{" "}
             pursuing a double-major in{" "}
-            <ExternalLink href="https://www.wpi.edu/academics/departments/computer-science">
+            <Link href="https://www.wpi.edu/academics/departments/computer-science">
               Computer Science
-            </ExternalLink>{" "}
+            </Link>{" "}
             and{" "}
-            <ExternalLink href="https://www.wpi.edu/academics/departments/robotics-engineering">
+            <Link href="https://www.wpi.edu/academics/departments/robotics-engineering">
               Robotics Engineering
-            </ExternalLink>
+            </Link>
             .
           </Text>
           <Text>

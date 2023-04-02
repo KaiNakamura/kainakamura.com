@@ -7,6 +7,7 @@ module.exports = {
     },
     colors: {
       gray: {
+        light: "#7D8082",
         DEFAULT: "#2A2C2D",
         dark: "#232526",
       },
@@ -34,5 +35,5 @@ module.exports = {
     // },
     extend: {},
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };

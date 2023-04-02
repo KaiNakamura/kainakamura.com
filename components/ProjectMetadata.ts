@@ -6,6 +6,7 @@ export interface ProjectMetadata {
   title: string;
   description: string;
   image: string;
+  tags?: string[];
 }
 
 export const getProjectMetadata = (): ProjectMetadata[] => {
@@ -19,6 +20,7 @@ export const getProjectMetadata = (): ProjectMetadata[] => {
       title: matterResult.data.title,
       description: matterResult.data.description,
       image: matterResult.data.image,
+      tags: matterResult.data.tags,
     };
   });
   return projects;

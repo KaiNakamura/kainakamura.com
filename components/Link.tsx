@@ -10,8 +10,27 @@ export const Link: FC<LinkProps> = ({
   children,
   rel,
   ...rest
-}: LinkProps) => (
-  <a href={href} className="text-blue underline" {...rest}>
-    {children ?? href}
-  </a>
-);
+}: LinkProps) => {
+  const isInternalLink =
+    href.length > 0 && (href[0] === "/" || href[0] === "#");
+
+  if (isInternalLink) {
+    return (
+      <a href={href} className="text-blue underline" {...rest}>
+        {children ?? href}
+      </a>
+    );
+  } else {
+    return (
+      <a
+        target="_blank"
+        rel={`noopener noreferrer${rel ? ` ${rel}` : ""}`}
+        href={href}
+        className="text-blue underline"
+        {...rest}
+      >
+        {children ?? href}
+      </a>
+    );
+  }
+};
