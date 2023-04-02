@@ -30,4 +30,4 @@ To report a bug or to request a feature go [here](https://github.com/KaiNakamura
 
 ## License
 
-Distributed under the [MIT License](https://github.com/KaiNakamura/kainakamura.com/blob/master/LICENSE).
+Distributed under the [MIT License](https://github.com/KaiNakamura/kainakamura.com/blob/main/LICENSE).
