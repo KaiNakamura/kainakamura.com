@@ -6,7 +6,7 @@ import Head from "next/head";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <div className="bg-white min-h-screen">
       <Head>
         <title>
           Kai Nakamura
@@ -16,6 +16,6 @@ export default function App({ Component, pageProps }: AppProps) {
       <NavBar />
       <Component {...pageProps} />
       <Footer />
-    </>
+    </div>
   );
 }
