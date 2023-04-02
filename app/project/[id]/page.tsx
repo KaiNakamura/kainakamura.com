@@ -15,7 +15,9 @@ const getProjectContent = (id: string) => {
 
 export const generateStaticParams = async () => {
   const projects = getProjectMetadata();
-  return projects.map((project) => project.id);
+  return projects.map((project) => ({
+    id: project.id,
+  }));
 };
 
 export default function Project(props: any) {
