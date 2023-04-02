@@ -9,7 +9,7 @@ export interface CardProps {
 export default function Card({ project }: CardProps) {
   return (
     <Link href={"/project/" + project.id}>
-      <div className="max-w-xs md:max-w-sm rounded-3xl overflow-hidden shadow-xl">
+      <div className="h-full max-w-xs md:max-w-sm rounded-3xl overflow-hidden shadow-xl">
         <Image
           src={"/" + project.image}
           alt={project.title}
