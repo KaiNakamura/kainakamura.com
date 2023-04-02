@@ -6,10 +6,4 @@ tags:
   - Construct
 ---
 
-# This is an h1
-
-# This is an h2
-
-This is a paragraph
-
-This is another paragraph
+Liar's Dice is a pirate's game of betting and bluffing that I made using Construct. Take turns placing bets and test your bluffing skills against the computer.
