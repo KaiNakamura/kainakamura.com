@@ -19,6 +19,7 @@ export default function NavButton({
           ? "text-2xl font-bold whitespace-nowrap text-red hover:underline"
           : "text-xl text-white hover:text-blue-500"
       }
+      scroll={false}
     >
       {text}
     </Link>
