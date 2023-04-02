@@ -1,10 +1,10 @@
-import fs from "fs";
-import Markdown from "markdown-to-jsx";
-import matter from "gray-matter";
-import { getProjectMetadata } from "@components/ProjectMetadata";
 import { Link } from "@components/Link";
+import { getProjectMetadata } from "@components/ProjectMetadata";
+import ProjectTag from "@components/ProjectTag";
+import fs from "fs";
+import matter from "gray-matter";
+import Markdown from "markdown-to-jsx";
 import Image from "next/image";
-import { Text } from "@components/Text";
 
 const getProjectContent = (id: string) => {
   const folder = "content/";
@@ -32,12 +32,7 @@ export default function Project(props: any) {
             </h1>
             {project.data.tags &&
               project.data.tags.map((tag: string) => (
-                <span
-                  key={tag}
-                  className="inline-block text-gray-light outline outline-1 outline-gray-light rounded-full px-3 py-1 font-semibold text-gray-700 mr-2 mb-2 text-[0.5rem] sm:text-xs md:text-sm"
-                >
-                  {tag}
-                </span>
+                <ProjectTag key={tag} tag={tag} />
               ))}
           </div>
           <Image
