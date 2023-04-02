@@ -6,7 +6,7 @@ import Head from "next/head";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <div className="bg-white min-h-screen">
+    <div className="min-h-screen bg-white text-gray-dark">
       <Head>
         <title>
           Kai Nakamura
