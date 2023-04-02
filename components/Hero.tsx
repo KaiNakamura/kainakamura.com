@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <div className="relative overflow-hidden">
       <section className="width-screen min-h-[65vh] bg-gray flex flex-col justify-center items-center">
-        <div className="flex justify-center items-center gap-4 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16">
+        <div className="flex justify-center items-center gap-4 py-8 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16">
           <div>
             <h1 className="text-white font-bold leading-none text-[10vw] xl:text-9xl">
               Hi, I&apos;m Kai
