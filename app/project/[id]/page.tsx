@@ -1,4 +1,5 @@
 import { Link } from "@components/Link";
+import ProjectButton from "@components/ProjectButton";
 import { getProjectMetadata } from "@components/ProjectMetadata";
 import ProjectTag from "@components/ProjectTag";
 import fs from "fs";
@@ -26,39 +27,45 @@ export default function Project(props: any) {
 
   return (
     <section className="max-w-3xl m-auto p-8">
-      <div className="flex flex-col gap-8">
-        <div className="flex flex-col gap-4 md:gap-8">
-          <div>
-            <h1 className="font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl pb-2 md:pb-4">
-              {project.data.title}
-            </h1>
-            {project.data.tags &&
-              project.data.tags.map((tag: string) => (
-                <ProjectTag key={tag} tag={tag} />
-              ))}
-          </div>
-          <Image
-            src={"/" + project.data.image}
-            alt={project.data.title}
-            width={500}
-            height={500}
-            className="w-full"
-          />
+      <div className="flex flex-col gap-4 md:gap-8">
+        <div>
+          <h1 className="font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl pb-2 md:pb-4">
+            {project.data.title}
+          </h1>
+          {project.data.tags &&
+            project.data.tags.map((tag: string) => (
+              <ProjectTag key={tag} tag={tag} />
+            ))}
         </div>
-        <article className="prose sm:prose-base md:prose-lg lg:prose-xl xl:prose-2xl prose-p:text-gray-dark prose-headings:text-gray prose-a:text-blue">
-          <Markdown
-            options={{
-              overrides: {
-                a: {
-                  component: Link,
-                },
-              },
-            }}
-          >
-            {project.content}
-          </Markdown>
-        </article>
+        <Image
+          src={"/" + project.data.image}
+          alt={project.data.title}
+          width={500}
+          height={500}
+          className="w-full"
+        />
+        <div>
+          {project.data.links &&
+            project.data.links.map((link: any) => (
+              <ProjectButton key={link.text} href={link.href}>
+                {link.text}
+              </ProjectButton>
+            ))}
+        </div>
       </div>
+      <article className="prose sm:prose-base md:prose-lg lg:prose-xl xl:prose-2xl prose-p:text-gray-dark prose-headings:text-gray prose-a:text-blue">
+        <Markdown
+          options={{
+            overrides: {
+              a: {
+                component: Link,
+              },
+            },
+          }}
+        >
+          {project.content}
+        </Markdown>
+      </article>
     </section>
   );
 }

@@ -4,6 +4,9 @@ description: "A Minecraft Speedrunning Plugin built for a tournament of world re
 image: "speedrun-showdown.png"
 tags:
   - Java
+links:
+  - text: View on Github
+    href: https://github.com/KaiNakamura/SpeedrunShowdown
 ---
 
 Speedrun Showdown is a Minecraft Speedrunning Plugin written in Java. I created the plugin for an event organized by [Do Good Points](https://www.dogoodpoints.com/) that featured world record holding Minecraft speed runners and top-rated content creators.
