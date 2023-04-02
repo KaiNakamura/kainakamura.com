@@ -7,7 +7,7 @@ export default function Hero() {
         <div className="flex justify-center items-center gap-4 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16">
           <div>
             <h1 className="text-white font-bold leading-none text-[10vw] xl:text-9xl">
-              Hi, I'm Kai
+              Hi, I&apos;m Kai
             </h1>
             <h2 className="text-blue leading-none text-[3.75vw] xl:text-5xl">
               Software Dev / Student

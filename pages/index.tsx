@@ -16,7 +16,7 @@ export default function Home() {
       <Hero />
       <section id="about" className="max-w-3xl m-auto p-12 flex flex-col gap-8">
         <Text>
-          I'm a student at{" "}
+          I&apos;m a student at{" "}
           <ExternalLink href="https://www.wpi.edu/">WPI</ExternalLink> pursuing
           a double-major in{" "}
           <ExternalLink href="https://www.wpi.edu/academics/departments/computer-science">
@@ -29,9 +29,9 @@ export default function Home() {
           .
         </Text>
         <Text>
-          Check out some of the cool stuff I've been working on below. If you've
-          got any questions or are interested in working with me feel free to{" "}
-          <Link href="#contact">contact me</Link>.
+          Check out some of the cool stuff I&apos;ve been working on below. If
+          you&apos;ve got any questions or are interested in working with me
+          feel free to <Link href="#contact">contact me</Link>.
         </Text>
       </section>
       <section id="projects">
