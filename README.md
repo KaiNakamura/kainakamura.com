@@ -1,5 +1,5 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://github.com/KaiNakamura/kainakamura.com/blob/master/LICENSE)
-[![Node.js CI/CD](https://github.com/KaiNakamura/kainakamura.com/actions/workflows/node.js.yml/badge.svg)](https://github.com/KaiNakamura/kainakamura.com/actions/workflows/node.js.yml)
+[![Next.js CI/CD](https://github.com/KaiNakamura/kainakamura.com/actions/workflows/nextjs.yml/badge.svg)](https://github.com/KaiNakamura/kainakamura.com/actions/workflows/nextjs.yml)
 
 # [kainakamura.com](https://kainakamura.com)
 
