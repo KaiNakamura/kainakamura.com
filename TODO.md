@@ -5,3 +5,4 @@
 - [ ] Add GitHub and LinkedIn links
 - [ ] Hover effects
 - [ ] Add hamburger menu
+- [ ] Add ordering to projects
