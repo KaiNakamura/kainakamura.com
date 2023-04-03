@@ -16,7 +16,7 @@ export default function Home() {
       <div className="flex flex-col">
         <Section
           id="about"
-          className="max-w-3xl m-auto flex flex-col gap-8 px-8 py-20"
+          className="max-w-3xl m-auto flex flex-col gap-8 px-8 pt-14 pb-20"
         >
           <Text>
             I&apos;m a student at <Link href="https://www.wpi.edu/">WPI</Link>{" "}
@@ -36,7 +36,10 @@ export default function Home() {
             feel free to <Link href="#contact">contact me</Link>.
           </Text>
         </Section>
-        <Section id="projects" className="bg-white-dark px-8 py-40">
+        <Section
+          id="projects"
+          className="bg-white-dark px-8 py-16 md:py-24 lg:py-32 xl:py-40"
+        >
           <div className="max-w-fit m-auto">
             <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-16">
               {projects.map((project) => (
@@ -47,7 +50,7 @@ export default function Home() {
         </Section>
         <Section
           id="contact"
-          className="max-w-3xl m-auto flex flex-col gap-8 px-8 py-40"
+          className="max-w-3xl m-auto flex flex-col gap-8 px-8 py-16 md:py-24 lg:py-32 xl:py-40"
         >
           <div className="flex justify-center">
             <Text className="font-extrabold text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
