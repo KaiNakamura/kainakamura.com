@@ -14,7 +14,7 @@ export default function Hero() {
             </h2>
           </div>
           <Image
-            src="/kai-nakamura.png"
+            src="/kai-nakamura.jpg"
             alt="Kai Nakamura"
             width={320}
             height={320}
