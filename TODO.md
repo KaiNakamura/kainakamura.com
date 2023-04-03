@@ -6,3 +6,4 @@
 - [ ] Hover effects
 - [ ] Add hamburger menu
 - [ ] Add ordering to projects
+- [ ] Add boids
