@@ -4,3 +4,4 @@
 - [ ] Add 404
 - [ ] Add GitHub and LinkedIn links
 - [ ] Hover effects
+- [ ] Add hamburger menu
