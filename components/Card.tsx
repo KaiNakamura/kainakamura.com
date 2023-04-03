@@ -10,7 +10,7 @@ export interface CardProps {
 export default function Card({ project }: CardProps) {
   return (
     <Link href={"/project/" + project.id}>
-      <div className="bg-white h-full max-w-xs md:max-w-sm rounded-3xl overflow-hidden shadow-xl">
+      <div className="bg-white h-full max-w-xs md:max-w-sm rounded-3xl overflow-hidden shadow-xl transition duration-300 ease-in-out hover:-translate-y-4 hover:-translate-x-0.5 hover:shadow-2xl">
         <Image
           src={"/" + project.image}
           alt={project.title}
