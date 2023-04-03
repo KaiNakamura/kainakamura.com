@@ -26,7 +26,7 @@ export default function Project(props: any) {
   const project = getProjectContent(id);
 
   return (
-    <section className="max-w-3xl m-auto flex flex-col gap-4 md:gap-8 p-8">
+    <section className="max-w-3xl mx-auto flex flex-col gap-4 md:gap-8 p-8">
       <div className="flex flex-col gap-4 md:gap-8">
         <div>
           <h1 className="font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl pb-2 md:pb-4">
