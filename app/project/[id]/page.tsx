@@ -46,7 +46,7 @@ export default function Project(props: any) {
         />
         <div>
           {project.data.links &&
-            project.data.links.map((link: any) => (
+            project.data.links.map((link: { text: string; href: string }) => (
               <ProjectButton key={link.text} href={link.href}>
                 {link.text}
               </ProjectButton>

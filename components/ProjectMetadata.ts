@@ -6,7 +6,12 @@ export interface ProjectMetadata {
   title: string;
   description: string;
   image: string;
+  order: number;
   tags?: string[];
+  links?: {
+    text: string;
+    href: string;
+  };
 }
 
 export const getProjectMetadata = (): ProjectMetadata[] => {
@@ -20,8 +25,10 @@ export const getProjectMetadata = (): ProjectMetadata[] => {
       title: matterResult.data.title,
       description: matterResult.data.description,
       image: matterResult.data.image,
+      order: matterResult.data.order,
       tags: matterResult.data.tags,
+      links: matterResult.data.links,
     };
   });
-  return projects;
+  return projects.sort((a, b) => a.order - b.order);
 };

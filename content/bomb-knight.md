@@ -2,6 +2,7 @@
 title: "Bomb Knight"
 description: "A roguelike dungeon crawler with timed explosions"
 image: "bomb-knight.jpg"
+order: 0
 tags:
   - Construct
 links:
