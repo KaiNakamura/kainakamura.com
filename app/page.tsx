@@ -84,7 +84,7 @@ export default function Home() {
                       Resume
                     </h1>
                     <p className="text-blue underline text-sm md:text-base lg:text-lg xl:text-xl">
-                      Download PDF
+                      View PDF
                     </p>
                   </div>
                 </div>
