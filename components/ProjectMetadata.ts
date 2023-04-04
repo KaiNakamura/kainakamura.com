@@ -6,7 +6,7 @@ export interface ProjectMetadata {
   title: string;
   description: string;
   image: string;
-  order: number;
+  order?: number;
   tags?: string[];
   links?: {
     text: string;
@@ -25,7 +25,7 @@ export const getProjectMetadata = (): ProjectMetadata[] => {
       title: matterResult.data.title,
       description: matterResult.data.description,
       image: matterResult.data.image,
-      order: matterResult.data.order,
+      order: matterResult.data.order == null ? 999999 : matterResult.data.order,
       tags: matterResult.data.tags,
       links: matterResult.data.links,
     };
