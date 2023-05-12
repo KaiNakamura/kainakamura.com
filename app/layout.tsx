@@ -4,7 +4,7 @@ import "@styles/globals.css";
 
 export const metadata = {
   title: "Kai Nakamura",
-  description: "Kai Nakamura's Portfolio",
+  description: "Kai Nakamura's Portfolio Website",
 };
 
 export default function RootLayout({
