@@ -17,7 +17,7 @@ export default function NavButton({
       className={
         isHome
           ? "text-2xl font-bold whitespace-nowrap text-red hover:underline"
-          : "text-xl text-white hover:text-blue-500"
+          : "text-xl text-white hover:underline hover:text-blue"
       }
       scroll={false}
     >
