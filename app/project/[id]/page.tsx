@@ -1,7 +1,7 @@
 import { Link } from "@components/Link";
 import ProjectButton from "@components/ProjectButton";
-import { getProjectMetadata } from "@components/ProjectMetadata";
 import ProjectTag from "@components/ProjectTag";
+import { getProjectMetadata } from "@util/ProjectMetadata";
 import fs from "fs";
 import matter from "gray-matter";
 import Markdown from "markdown-to-jsx";

@@ -1,7 +1,7 @@
-import Image from "next/image";
-import { ProjectMetadata } from "@components/ProjectMetadata";
-import Link from "next/link";
 import ProjectTag from "@components/ProjectTag";
+import { ProjectMetadata } from "@util/ProjectMetadata";
+import Image from "next/image";
+import Link from "next/link";
 
 export interface CardProps {
   project: ProjectMetadata;

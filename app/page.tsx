@@ -1,11 +1,11 @@
 import Card from "@components/Card";
 import Hero from "@components/Hero";
 import { Link } from "@components/Link";
-import { getProjectMetadata } from "@components/ProjectMetadata";
 import { Section } from "@components/Section";
 import { Text } from "@components/Text";
-import { HiOutlineMail } from "react-icons/hi";
+import { getProjectMetadata } from "@util/ProjectMetadata";
 import { GrDocumentUser } from "react-icons/gr";
+import { HiOutlineMail } from "react-icons/hi";
 
 export default function Home() {
   const projects = getProjectMetadata();
