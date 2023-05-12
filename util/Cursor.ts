@@ -28,31 +28,20 @@ export default class Cursor {
     }
 
     let position = this.getPosition();
+    let ease = this.easeInOutQuad();
+    let r = RADIUS / 8.0 + 2 * ease;
+    let endAngle = 2 * Math.PI;
 
     context.strokeStyle = "#646464";
     context.fillStyle = "rgba(0, 0, 0, 0)";
     context.lineWidth = 2;
     context.beginPath();
-    context.arc(
-      position.x,
-      position.y,
-      RADIUS - this.easeInOutQuad(),
-      0,
-      2 * Math.PI
-    );
+    context.arc(position.x, position.y, RADIUS - ease, 0, endAngle);
     context.stroke();
 
     context.fillStyle = "#646464";
     context.beginPath();
-    context.ellipse(
-      position.x,
-      position.y,
-      RADIUS / 8.0 + 2 * this.easeInOutQuad(),
-      RADIUS / 8.0 + 2 * this.easeInOutQuad(),
-      0,
-      0,
-      2 * Math.PI
-    );
+    context.ellipse(position.x, position.y, r, r, 0, 0, endAngle);
     context.fill();
   }
 
@@ -68,7 +57,7 @@ export default class Cursor {
     this.mouseDown = false;
   }
 
-  getPosition() {
+  getPosition(): Point {
     const isMobile = () => {
       const toMatch = [
         /Android/i,
@@ -92,7 +81,7 @@ export default class Cursor {
     }
   }
 
-  easeInOutQuad() {
+  easeInOutQuad(): number {
     let t = this.animationFrame / ANIMATION_FRAMES;
     return (
       (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2) * ANIMATION_FRAMES
