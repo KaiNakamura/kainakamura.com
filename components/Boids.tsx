@@ -1,10 +1,17 @@
 "use client";
 
 import { MouseMove, Setup, Update, useCanvas } from "@hooks/useCanvas";
+import Boid from "@util/Boid";
 import Cursor from "@util/Cursor";
-import { useState } from "react";
+
+const NUM_BOIDS = 100;
 
 const cursor = new Cursor();
+const boids = new Array<Boid>(NUM_BOIDS);
+
+for (let i = 0; i < NUM_BOIDS; i++) {
+  boids[i] = new Boid();
+}
 
 const Boids = () => {
   const { canvasRef } = useCanvas(
@@ -17,11 +24,14 @@ const Boids = () => {
 
   function setup({ context, canvas }: Setup) {
     cursor.setup({ context, canvas });
+    boids.forEach((boid) => boid.setup({ context, canvas }));
   }
 
   function update({ context, canvas }: Update) {
     context.clearRect(0, 0, canvas.width, canvas.height);
     cursor.update({ context, canvas });
+    boids.forEach((boid) => boid.flock(boids, cursor));
+    boids.forEach((boid) => boid.update({ context, canvas }));
   }
 
   function onMouseMove({ context, canvas, point }: MouseMove) {

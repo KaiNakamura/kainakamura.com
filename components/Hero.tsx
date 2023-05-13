@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Boids from "@components/Boids";
+import Image from "next/image";
 
 export default function Hero() {
   return (

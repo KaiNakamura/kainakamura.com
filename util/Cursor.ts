@@ -1,17 +1,17 @@
 import { MouseMove, Setup, Update } from "@hooks/useCanvas";
-import Point from "@util/Point";
+import Vector from "@util/Vector";
 
+export const CURSOR_RADIUS = 100;
 const ANIMATION_FRAMES = 12.0;
-const RADIUS = 100;
 
 export default class Cursor {
-  position: Point;
+  position: Vector;
   mouseDown: boolean;
   animationFrame: number;
 
   constructor() {
     // Start cursor off canvas
-    this.position = { x: -RADIUS, y: -RADIUS };
+    this.position = new Vector(-CURSOR_RADIUS, -CURSOR_RADIUS);
 
     this.mouseDown = false;
 
@@ -21,32 +21,39 @@ export default class Cursor {
   setup({ context }: Setup) {}
 
   update({ context }: Update) {
+    this.updatePositionIfMobile();
+
     if (this.mouseDown && this.animationFrame < ANIMATION_FRAMES) {
       this.animationFrame++;
     } else if (!this.mouseDown && this.animationFrame > 0) {
       this.animationFrame--;
     }
 
-    let position = this.getPosition();
     let ease = this.easeInOutQuad();
-    let r = RADIUS / 8.0 + 2 * ease;
+    let r = CURSOR_RADIUS / 8.0 + 2 * ease;
     let endAngle = 2 * Math.PI;
 
     context.strokeStyle = "#646464";
     context.fillStyle = "rgba(0, 0, 0, 0)";
     context.lineWidth = 2;
     context.beginPath();
-    context.arc(position.x, position.y, RADIUS - ease, 0, endAngle);
+    context.arc(
+      this.position.x,
+      this.position.y,
+      CURSOR_RADIUS - ease,
+      0,
+      endAngle
+    );
     context.stroke();
 
     context.fillStyle = "#646464";
     context.beginPath();
-    context.ellipse(position.x, position.y, r, r, 0, 0, endAngle);
+    context.ellipse(this.position.x, this.position.y, r, r, 0, 0, endAngle);
     context.fill();
   }
 
   onMouseMove({ point }: MouseMove) {
-    this.position = point;
+    this.position.set(point.x, point.y);
   }
 
   onMouseDown() {
@@ -57,7 +64,7 @@ export default class Cursor {
     this.mouseDown = false;
   }
 
-  getPosition(): Point {
+  updatePositionIfMobile() {
     const isMobile = () => {
       const toMatch = [
         /Android/i,
@@ -75,9 +82,7 @@ export default class Cursor {
     };
 
     if (isMobile() && !this.mouseDown) {
-      return { x: -RADIUS, y: -RADIUS };
-    } else {
-      return this.position;
+      this.position.set(-CURSOR_RADIUS, -CURSOR_RADIUS);
     }
   }
 
