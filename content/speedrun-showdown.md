@@ -6,7 +6,7 @@ order: 2
 tags:
   - Java
 links:
-  - text: View on Github
+  - text: View on GitHub
     href: https://github.com/KaiNakamura/SpeedrunShowdown
 ---
 
