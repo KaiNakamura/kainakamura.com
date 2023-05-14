@@ -134,7 +134,7 @@ export const useCanvas = (
       window.removeEventListener("touchend", onMouseUp);
       window.removeEventListener("resize", resize);
     };
-  }, [onMouseMove]);
+  }, [onMouseMove, onMouseDown, onMouseUp, onResize]);
 
   return { canvasRef, canvasParentRef };
 };
