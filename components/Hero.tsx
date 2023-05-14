@@ -21,6 +21,7 @@ export default function Hero() {
               alt="Kai Nakamura"
               width={320}
               height={320}
+              priority={true}
               className="rounded-full max-w-[25vw] xl:max-w-[320px]"
             />
           </div>
