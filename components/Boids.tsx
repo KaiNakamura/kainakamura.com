@@ -14,12 +14,13 @@ for (let i = 0; i < NUM_BOIDS; i++) {
 }
 
 const Boids = () => {
-  const { canvasRef } = useCanvas(
+  const { canvasRef, canvasParentRef } = useCanvas(
     setup,
     update,
     onMouseMove,
     onMouseDown,
-    onMouseUp
+    onMouseUp,
+    onResize
   );
 
   function setup({ context, canvas }: Setup) {
@@ -46,8 +47,13 @@ const Boids = () => {
     cursor.onMouseUp();
   }
 
+  function onResize(width: number, height: number) {
+    canvasRef.current?.setAttribute("width", width.toString());
+    canvasRef.current?.setAttribute("height", height.toString());
+  }
+
   return (
-    <div className="boids absolute">
+    <div ref={canvasParentRef} className="boids absolute w-full h-full">
       <canvas ref={canvasRef} width={750} height={750} />
     </div>
   );

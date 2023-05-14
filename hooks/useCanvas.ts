@@ -24,9 +24,11 @@ export const useCanvas = (
   update: ({ context }: Update) => void,
   onMouseMove: ({ context, point }: MouseMove) => void,
   onMouseDown: () => void,
-  onMouseUp: () => void
+  onMouseUp: () => void,
+  onResize: (width: number, height: number) => void
 ) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const canvasParentRef = useRef<HTMLDivElement>(null);
 
   const getContext = (): CanvasRenderingContext2D | null => {
     return canvasRef.current ? canvasRef.current.getContext("2d") : null;
@@ -55,7 +57,7 @@ export const useCanvas = (
   }, 20);
 
   useEffect(() => {
-    const handler = (e: MouseEvent) => {
+    const mouseMoveHandler = (e: MouseEvent) => {
       const context = getContext();
       const canvas = getCanvas();
       const point = getCanvasPoint(e);
@@ -66,29 +68,36 @@ export const useCanvas = (
 
     const getCanvasPoint = (e: MouseEvent) => {
       const canvas = canvasRef.current;
-      if (!canvas) {
-        return null;
+      if (canvas) {
+        const rect = canvas.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        return { x, y };
       }
+    };
 
-      const rect = canvas.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-
-      return { x, y };
+    const resizeHandler = (e: Event) => {
+      const canvasParent = canvasParentRef.current;
+      if (canvasParent) {
+        onResize(canvasParent.clientWidth, canvasParent.clientHeight);
+      }
     };
 
     // Add event listeners
-    canvasRef.current?.addEventListener("mousemove", handler);
+    canvasRef.current?.addEventListener("mousemove", mouseMoveHandler);
     window.addEventListener("mousedown", onMouseDown);
     window.addEventListener("mouseup", onMouseUp);
+    window.addEventListener("resize", resizeHandler);
 
     // Remove event listeners
     return () => {
-      canvasRef.current?.removeEventListener("mousemove", handler);
+      canvasRef.current?.removeEventListener("mousemove", mouseMoveHandler);
       window.removeEventListener("mousedown", onMouseDown);
       window.removeEventListener("mouseup", onMouseUp);
+      window.removeEventListener("resize", resizeHandler);
     };
   }, [onMouseMove]);
 
-  return { canvasRef };
+  return { canvasRef, canvasParentRef };
 };
