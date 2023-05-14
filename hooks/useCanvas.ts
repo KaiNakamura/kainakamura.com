@@ -116,20 +116,20 @@ export const useCanvas = (
     };
 
     // Add event listeners
-    canvasRef.current?.addEventListener("mousemove", mouseMoveHandler);
+    window.addEventListener("mousemove", mouseMoveHandler);
     canvasRef.current?.addEventListener("mousedown", onMouseDown);
     window.addEventListener("mouseup", onMouseUp);
-    canvasRef.current?.addEventListener("touchmove", touchMoveHandler);
+    window.addEventListener("touchmove", touchMoveHandler);
     canvasRef.current?.addEventListener("touchstart", touchStartHandler);
     window.addEventListener("touchend", onMouseUp);
     window.addEventListener("resize", resize);
 
     // Remove event listeners
     return () => {
-      canvasRef.current?.removeEventListener("mousemove", mouseMoveHandler);
+      window.removeEventListener("mousemove", mouseMoveHandler);
       canvasRef.current?.removeEventListener("mousedown", mouseMoveHandler);
       window.removeEventListener("mouseup", onMouseUp);
-      canvasRef.current?.removeEventListener("touchmove", touchMoveHandler);
+      window.removeEventListener("touchmove", touchMoveHandler);
       canvasRef.current?.removeEventListener("touchstart", touchStartHandler);
       window.removeEventListener("touchend", onMouseUp);
       window.removeEventListener("resize", resize);
