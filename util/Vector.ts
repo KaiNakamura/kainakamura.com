@@ -80,4 +80,9 @@ export default class Vector {
     let dy = other.y - this.y;
     return Math.sqrt(dx * dx + dy * dy);
   }
+
+  lerp(other: Vector, t: number) {
+    this.scale(t).add(other.copy().scale(1 - t));
+    return this;
+  }
 }

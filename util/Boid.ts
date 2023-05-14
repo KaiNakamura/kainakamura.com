@@ -15,16 +15,18 @@ export default class Boid {
   position: Vector;
   velocity: Vector;
   acceleration: Vector;
+  heading: Vector;
   size: number;
 
   constructor() {
     this.position = new Vector(0, 0);
     this.velocity = new Vector(0, 0);
     this.acceleration = new Vector(0, 0);
+    this.heading = new Vector(0, 0);
     this.size = BOID_SIZE;
   }
 
-  setup({ context, canvas }: Setup) {
+  setup({ canvas }: Setup) {
     this.position.set(
       Math.random() * canvas.width,
       Math.random() * canvas.height
@@ -40,27 +42,27 @@ export default class Boid {
     this.acceleration.set(0, 0);
     this.wrapAroundEdges(canvas);
 
-    let direction = this.velocity.copy().normalize();
+    this.heading.lerp(this.velocity.copy().normalize(), 0.8).normalize();
 
     context.strokeStyle = "#646464";
     context.fillStyle = "rgba(0, 0, 0, 0)";
     context.lineWidth = 2;
     context.beginPath();
     context.moveTo(
-      this.position.x + this.size * direction.x,
-      this.position.y + this.size * direction.y
+      this.position.x + this.size * this.heading.x,
+      this.position.y + this.size * this.heading.y
     );
     context.lineTo(
-      this.position.x - (this.size * direction.y) / 3.0,
-      this.position.y + (this.size * direction.x) / 3.0
+      this.position.x - (this.size * this.heading.y) / 3.0,
+      this.position.y + (this.size * this.heading.x) / 3.0
     );
     context.lineTo(
-      this.position.x + (this.size * direction.y) / 3.0,
-      this.position.y - (this.size * direction.x) / 3.0
+      this.position.x + (this.size * this.heading.y) / 3.0,
+      this.position.y - (this.size * this.heading.x) / 3.0
     );
     context.lineTo(
-      this.position.x + this.size * direction.x,
-      this.position.y + this.size * direction.y
+      this.position.x + this.size * this.heading.x,
+      this.position.y + this.size * this.heading.y
     );
     context.stroke();
   }
