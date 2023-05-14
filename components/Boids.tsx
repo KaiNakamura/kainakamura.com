@@ -23,7 +23,6 @@ const Boids = () => {
 
   function setup({ context, canvas }: Setup) {
     if (!hasSetup) {
-      console.log("setup");
       for (let i = 0; i < NUM_BOIDS; i++) {
         boids[i] = new Boid();
       }
@@ -52,7 +51,6 @@ const Boids = () => {
   }
 
   function onResize(width: number, height: number) {
-    console.log("Resize:", width, height);
     canvasRef.current?.setAttribute("width", width.toString());
     canvasRef.current?.setAttribute("height", height.toString());
   }

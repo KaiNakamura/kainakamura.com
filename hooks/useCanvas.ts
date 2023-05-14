@@ -48,10 +48,10 @@ export const useCanvas = (
   };
 
   useEffect(() => {
+    resize();
     const context = getContext();
     const canvas = getCanvas();
     if (context && canvas) {
-      resize();
       setup({ context, canvas });
     }
   }, []);
