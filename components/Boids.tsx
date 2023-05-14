@@ -4,14 +4,10 @@ import { MouseMove, Setup, Update, useCanvas } from "@hooks/useCanvas";
 import Boid from "@util/Boid";
 import Cursor from "@util/Cursor";
 
-const NUM_BOIDS = 100;
+const NUM_BOIDS = 80;
 
 const cursor = new Cursor();
 const boids = new Array<Boid>(NUM_BOIDS);
-
-for (let i = 0; i < NUM_BOIDS; i++) {
-  boids[i] = new Boid();
-}
 
 const Boids = () => {
   const { canvasRef, canvasParentRef } = useCanvas(
@@ -24,6 +20,9 @@ const Boids = () => {
   );
 
   function setup({ context, canvas }: Setup) {
+    for (let i = 0; i < NUM_BOIDS; i++) {
+      boids[i] = new Boid();
+    }
     boids.forEach((boid) => boid.setup({ context, canvas }));
   }
 

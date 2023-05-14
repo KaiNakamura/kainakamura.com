@@ -51,8 +51,8 @@ export const useCanvas = (
     const context = getContext();
     const canvas = getCanvas();
     if (context && canvas) {
-      setup({ context, canvas });
       resize();
+      setup({ context, canvas });
     }
   }, [false]);
 
