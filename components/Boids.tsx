@@ -9,6 +9,8 @@ const NUM_BOIDS = 80;
 const cursor = new Cursor();
 const boids = new Array<Boid>(NUM_BOIDS);
 
+let hasSetup = false;
+
 const Boids = () => {
   const { canvasRef, canvasParentRef } = useCanvas(
     setup,
@@ -20,10 +22,14 @@ const Boids = () => {
   );
 
   function setup({ context, canvas }: Setup) {
-    for (let i = 0; i < NUM_BOIDS; i++) {
-      boids[i] = new Boid();
+    if (!hasSetup) {
+      console.log("setup");
+      for (let i = 0; i < NUM_BOIDS; i++) {
+        boids[i] = new Boid();
+      }
+      boids.forEach((boid) => boid.setup({ context, canvas }));
+      hasSetup = true;
     }
-    boids.forEach((boid) => boid.setup({ context, canvas }));
   }
 
   function update({ context, canvas }: Update) {
@@ -46,6 +52,7 @@ const Boids = () => {
   }
 
   function onResize(width: number, height: number) {
+    console.log("Resize:", width, height);
     canvasRef.current?.setAttribute("width", width.toString());
     canvasRef.current?.setAttribute("height", height.toString());
   }

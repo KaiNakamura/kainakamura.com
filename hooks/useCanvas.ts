@@ -54,7 +54,7 @@ export const useCanvas = (
       resize();
       setup({ context, canvas });
     }
-  }, [false]);
+  }, []);
 
   useInterval(() => {
     const context = getContext();
