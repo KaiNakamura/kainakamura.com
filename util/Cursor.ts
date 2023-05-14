@@ -18,8 +18,6 @@ export default class Cursor {
     this.animationFrame = 0;
   }
 
-  setup({ context }: Setup) {}
-
   update({ context }: Update) {
     this.updatePositionIfMobile();
 

@@ -40,11 +40,19 @@ export const useCanvas = (
       : null;
   };
 
+  const resize = () => {
+    const canvasParent = canvasParentRef.current;
+    if (canvasParent) {
+      onResize(canvasParent.clientWidth, canvasParent.clientHeight);
+    }
+  };
+
   useEffect(() => {
     const context = getContext();
     const canvas = getCanvas();
     if (context && canvas) {
       setup({ context, canvas });
+      resize();
     }
   }, [false]);
 
@@ -60,13 +68,13 @@ export const useCanvas = (
     const mouseMoveHandler = (e: MouseEvent) => {
       const context = getContext();
       const canvas = getCanvas();
-      const point = getCanvasPoint(e);
+      const point = getMouseEventPoint(e);
       if (context && canvas && point) {
         onMouseMove({ context, canvas, point });
       }
     };
 
-    const getCanvasPoint = (e: MouseEvent) => {
+    const getMouseEventPoint = (e: MouseEvent) => {
       const canvas = canvasRef.current;
       if (canvas) {
         const rect = canvas.getBoundingClientRect();
@@ -77,25 +85,54 @@ export const useCanvas = (
       }
     };
 
-    const resizeHandler = (e: Event) => {
-      const canvasParent = canvasParentRef.current;
-      if (canvasParent) {
-        onResize(canvasParent.clientWidth, canvasParent.clientHeight);
+    const touchStartHandler = (e: TouchEvent) => {
+      const context = getContext();
+      const canvas = getCanvas();
+      const point = getTouchEventPoint(e);
+      if (context && canvas && point) {
+        onMouseDown();
+        onMouseMove({ context, canvas, point });
+      }
+    };
+
+    const touchMoveHandler = (e: TouchEvent) => {
+      const context = getContext();
+      const canvas = getCanvas();
+      const point = getTouchEventPoint(e);
+      if (context && canvas && point) {
+        onMouseMove({ context, canvas, point });
+      }
+    };
+
+    const getTouchEventPoint = (e: TouchEvent) => {
+      const canvas = canvasRef.current;
+      if (canvas && e.touches.length > 0) {
+        const rect = canvas.getBoundingClientRect();
+        const x = e.touches[0].clientX - rect.left;
+        const y = e.touches[0].clientY - rect.top;
+
+        return { x, y };
       }
     };
 
     // Add event listeners
     canvasRef.current?.addEventListener("mousemove", mouseMoveHandler);
-    window.addEventListener("mousedown", onMouseDown);
+    canvasRef.current?.addEventListener("mousedown", onMouseDown);
     window.addEventListener("mouseup", onMouseUp);
-    window.addEventListener("resize", resizeHandler);
+    canvasRef.current?.addEventListener("touchmove", touchMoveHandler);
+    canvasRef.current?.addEventListener("touchstart", touchStartHandler);
+    window.addEventListener("touchend", onMouseUp);
+    window.addEventListener("resize", resize);
 
     // Remove event listeners
     return () => {
       canvasRef.current?.removeEventListener("mousemove", mouseMoveHandler);
-      window.removeEventListener("mousedown", onMouseDown);
+      canvasRef.current?.removeEventListener("mousedown", mouseMoveHandler);
       window.removeEventListener("mouseup", onMouseUp);
-      window.removeEventListener("resize", resizeHandler);
+      canvasRef.current?.removeEventListener("touchmove", touchMoveHandler);
+      canvasRef.current?.removeEventListener("touchstart", touchStartHandler);
+      window.removeEventListener("touchend", onMouseUp);
+      window.removeEventListener("resize", resize);
     };
   }, [onMouseMove]);
 

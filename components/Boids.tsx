@@ -24,7 +24,6 @@ const Boids = () => {
   );
 
   function setup({ context, canvas }: Setup) {
-    cursor.setup({ context, canvas });
     boids.forEach((boid) => boid.setup({ context, canvas }));
   }
 
@@ -54,7 +53,7 @@ const Boids = () => {
 
   return (
     <div ref={canvasParentRef} className="boids absolute w-full h-full">
-      <canvas ref={canvasRef} width={750} height={750} />
+      <canvas ref={canvasRef} />
     </div>
   );
 };
