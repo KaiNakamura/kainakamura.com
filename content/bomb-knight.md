@@ -12,5 +12,4 @@ links:
 
 Bomb Knight is a rouguelike dungeon crawler that I made using Construct. Bombs explode to the beat of the music, but enemies only move when you do. You'll have to move carefully to defeat all the enemies without blowing yourself up.
 
-![Bomb Knight Gamplay](/bomb-knight/gameplay1.gif)
-![Bomb Knight Gamplay](/bomb-knight/gameplay2.gif)
+![Bomb Knight Gamplay](/bomb-knight/gameplay.gif)

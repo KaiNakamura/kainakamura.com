@@ -1,7 +1,7 @@
 ---
 title: "Liar's Dice"
 description: "A pirate's game of betting and bluffing"
-image: "liars-dice.jpg"
+image: "liars-dice/logo.jpg"
 order: 1
 tags:
   - Construct
@@ -11,3 +11,5 @@ links:
 ---
 
 Liar's Dice is a pirate's game of betting and bluffing that I made using Construct. Take turns placing bets and test your probability skills against the computer.
+
+![Liar's Dice Gamplay](/liars-dice/gameplay.gif)
