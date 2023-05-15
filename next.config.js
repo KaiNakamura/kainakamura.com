@@ -3,6 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   experimental: {
     appDir: true,
+    scrollRestoration: true,
   },
   output: "export",
   images: { unoptimized: true },
