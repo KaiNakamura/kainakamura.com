@@ -1,6 +1,6 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef } from 'react';
 
-import { useIsomorphicLayoutEffect } from "usehooks-ts";
+import { useIsomorphicLayoutEffect } from 'usehooks-ts';
 
 function useInterval(callback: () => void, delay: number | null) {
   const savedCallback = useRef(callback);

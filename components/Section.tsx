@@ -1,5 +1,5 @@
-import type { FC, ReactNode } from "react";
-import { HTMLAttributes } from "react";
+import type { FC, ReactNode } from 'react';
+import { HTMLAttributes } from 'react';
 
 export interface SectionProps extends HTMLAttributes<Element> {
   children?: ReactNode;

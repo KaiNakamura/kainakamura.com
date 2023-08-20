@@ -1,11 +1,11 @@
-import Card from "@components/Card";
-import Hero from "@components/Hero";
-import { Link } from "@components/Link";
-import { Section } from "@components/Section";
-import { Text } from "@components/Text";
-import { getProjectMetadata } from "@util/ProjectMetadata";
-import { GrDocumentUser } from "react-icons/gr";
-import { HiOutlineMail } from "react-icons/hi";
+import Card from '@components/Card';
+import Hero from '@components/Hero';
+import { Link } from '@components/Link';
+import { Section } from '@components/Section';
+import { Text } from '@components/Text';
+import { getProjectMetadata } from '@util/ProjectMetadata';
+import { GrDocumentUser } from 'react-icons/gr';
+import { HiOutlineMail } from 'react-icons/hi';
 
 export default function Home() {
   const projects = getProjectMetadata();
@@ -19,12 +19,12 @@ export default function Home() {
           className="max-w-3xl m-auto flex flex-col gap-8 px-8 pt-14 pb-20"
         >
           <Text>
-            I&apos;m a student at <Link href="https://www.wpi.edu/">WPI</Link>{" "}
-            pursuing a double-major in{" "}
+            I&apos;m a student at <Link href="https://www.wpi.edu/">WPI</Link>{' '}
+            pursuing a double-major in{' '}
             <Link href="https://www.wpi.edu/academics/departments/computer-science">
               Computer Science
-            </Link>{" "}
-            and{" "}
+            </Link>{' '}
+            and{' '}
             <Link href="https://www.wpi.edu/academics/departments/robotics-engineering">
               Robotics Engineering
             </Link>

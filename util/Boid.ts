@@ -1,7 +1,7 @@
-import { Setup, Update } from "@hooks/useCanvas";
-import Vector from "@util/Vector";
-import Canvas from "@util/Canvas";
-import Cursor, { CURSOR_RADIUS } from "@util/Cursor";
+import { Setup, Update } from '@hooks/useCanvas';
+import Vector from '@util/Vector';
+import Canvas from '@util/Canvas';
+import Cursor, { CURSOR_RADIUS } from '@util/Cursor';
 
 const PERCEPTION_RADIUS = 75;
 const ALIGNMENT_STRENGTH = 1.2;
@@ -44,8 +44,8 @@ export default class Boid {
 
     this.heading.lerp(this.velocity.copy().normalize(), 0.8).normalize();
 
-    context.strokeStyle = "#646464";
-    context.fillStyle = "rgba(0, 0, 0, 0)";
+    context.strokeStyle = '#646464';
+    context.fillStyle = 'rgba(0, 0, 0, 0)';
     context.lineWidth = 2;
     context.beginPath();
     context.moveTo(

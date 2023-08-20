@@ -5,7 +5,7 @@ const nextConfig = {
     appDir: true,
     scrollRestoration: true,
   },
-  output: "export",
+  output: 'export',
   images: { unoptimized: true },
 };
 

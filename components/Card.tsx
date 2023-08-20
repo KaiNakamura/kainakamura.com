@@ -1,7 +1,7 @@
-import ProjectTag from "@components/ProjectTag";
-import { ProjectMetadata } from "@util/ProjectMetadata";
-import Image from "next/image";
-import Link from "next/link";
+import ProjectTag from '@components/ProjectTag';
+import { ProjectMetadata } from '@util/ProjectMetadata';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export interface CardProps {
   project: ProjectMetadata;
@@ -9,10 +9,10 @@ export interface CardProps {
 
 export default function Card({ project }: CardProps) {
   return (
-    <Link href={"/project/" + project.id}>
+    <Link href={'/project/' + project.id}>
       <div className="bg-white h-full max-w-xs md:max-w-sm rounded-3xl overflow-hidden shadow-xl transition duration-300 ease-in-out hover:-translate-y-4 hover:-translate-x-0.5 hover:shadow-2xl">
         <Image
-          src={"/" + project.image}
+          src={'/' + project.image}
           alt={project.title}
           width={630}
           height={500}

@@ -1,16 +1,16 @@
-import { Link } from "@components/Link";
-import ProjectButton from "@components/ProjectButton";
-import ProjectTag from "@components/ProjectTag";
-import { getProjectMetadata } from "@util/ProjectMetadata";
-import fs from "fs";
-import matter from "gray-matter";
-import Markdown from "markdown-to-jsx";
-import Image from "next/image";
+import { Link } from '@components/Link';
+import ProjectButton from '@components/ProjectButton';
+import ProjectTag from '@components/ProjectTag';
+import { getProjectMetadata } from '@util/ProjectMetadata';
+import fs from 'fs';
+import matter from 'gray-matter';
+import Markdown from 'markdown-to-jsx';
+import Image from 'next/image';
 
 const getProjectContent = (id: string) => {
-  const folder = "content/";
+  const folder = 'content/';
   const file = `${folder}${id}.md`;
-  const content = fs.readFileSync(file, "utf8");
+  const content = fs.readFileSync(file, 'utf8');
   return matter(content);
 };
 
@@ -38,7 +38,7 @@ export default function Project(props: any) {
             ))}
         </div>
         <Image
-          src={"/" + project.data.image}
+          src={'/' + project.data.image}
           alt={project.data.title}
           width={500}
           height={500}

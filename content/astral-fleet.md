@@ -1,7 +1,7 @@
 ---
-title: "Astral Fleet"
-description: "A frantic arcade space shooter with plenty of powerups"
-image: "astral-fleet/logo.jpg"
+title: 'Astral Fleet'
+description: 'A frantic arcade space shooter with plenty of powerups'
+image: 'astral-fleet/logo.jpg'
 order: 0
 tags:
   - Construct

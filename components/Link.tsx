@@ -1,4 +1,4 @@
-import type { AnchorHTMLAttributes, FC, ReactNode } from "react";
+import type { AnchorHTMLAttributes, FC, ReactNode } from 'react';
 
 export interface LinkProps extends AnchorHTMLAttributes<Element> {
   href: string;
@@ -12,7 +12,7 @@ export const Link: FC<LinkProps> = ({
   ...rest
 }: LinkProps) => {
   const isInternalLink =
-    href.length > 0 && (href[0] === "/" || href[0] === "#");
+    href.length > 0 && (href[0] === '/' || href[0] === '#');
 
   if (isInternalLink) {
     return (
@@ -24,7 +24,7 @@ export const Link: FC<LinkProps> = ({
     return (
       <a
         target="_blank"
-        rel={`noopener noreferrer${rel ? ` ${rel}` : ""}`}
+        rel={`noopener noreferrer${rel ? ` ${rel}` : ''}`}
         href={href}
         className="text-blue underline"
         {...rest}

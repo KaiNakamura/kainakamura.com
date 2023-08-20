@@ -1,5 +1,5 @@
-import { MouseMove, Setup, Update } from "@hooks/useCanvas";
-import Vector from "@util/Vector";
+import { MouseMove, Setup, Update } from '@hooks/useCanvas';
+import Vector from '@util/Vector';
 
 export const CURSOR_RADIUS = 100;
 const ANIMATION_FRAMES = 12.0;
@@ -31,8 +31,8 @@ export default class Cursor {
     let r = CURSOR_RADIUS / 8.0 + 2 * ease;
     let endAngle = 2 * Math.PI;
 
-    context.strokeStyle = "#646464";
-    context.fillStyle = "rgba(0, 0, 0, 0)";
+    context.strokeStyle = '#646464';
+    context.fillStyle = 'rgba(0, 0, 0, 0)';
     context.lineWidth = 2;
     context.beginPath();
     context.arc(
@@ -44,7 +44,7 @@ export default class Cursor {
     );
     context.stroke();
 
-    context.fillStyle = "#646464";
+    context.fillStyle = '#646464';
     context.beginPath();
     context.ellipse(this.position.x, this.position.y, r, r, 0, 0, endAngle);
     context.fill();

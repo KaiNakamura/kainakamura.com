@@ -1,7 +1,7 @@
-import Canvas from "@util/Canvas";
-import Point from "@util/Point";
-import { useEffect, useRef } from "react";
-import { useInterval } from "usehooks-ts";
+import Canvas from '@util/Canvas';
+import Point from '@util/Point';
+import { useEffect, useRef } from 'react';
+import { useInterval } from 'usehooks-ts';
 
 export interface Setup {
   context: CanvasRenderingContext2D;
@@ -31,7 +31,7 @@ export const useCanvas = (
   const canvasParentRef = useRef<HTMLDivElement>(null);
 
   const getContext = (): CanvasRenderingContext2D | null => {
-    return canvasRef.current ? canvasRef.current.getContext("2d") : null;
+    return canvasRef.current ? canvasRef.current.getContext('2d') : null;
   };
 
   const getCanvas = (): Canvas | null => {
@@ -116,23 +116,23 @@ export const useCanvas = (
     };
 
     // Add event listeners
-    window.addEventListener("mousemove", mouseMoveHandler);
-    canvasRef.current?.addEventListener("mousedown", onMouseDown);
-    window.addEventListener("mouseup", onMouseUp);
-    window.addEventListener("touchmove", touchMoveHandler);
-    canvasRef.current?.addEventListener("touchstart", touchStartHandler);
-    window.addEventListener("touchend", onMouseUp);
-    window.addEventListener("resize", resize);
+    window.addEventListener('mousemove', mouseMoveHandler);
+    canvasRef.current?.addEventListener('mousedown', onMouseDown);
+    window.addEventListener('mouseup', onMouseUp);
+    window.addEventListener('touchmove', touchMoveHandler);
+    canvasRef.current?.addEventListener('touchstart', touchStartHandler);
+    window.addEventListener('touchend', onMouseUp);
+    window.addEventListener('resize', resize);
 
     // Remove event listeners
     return () => {
-      window.removeEventListener("mousemove", mouseMoveHandler);
-      canvasRef.current?.removeEventListener("mousedown", mouseMoveHandler);
-      window.removeEventListener("mouseup", onMouseUp);
-      window.removeEventListener("touchmove", touchMoveHandler);
-      canvasRef.current?.removeEventListener("touchstart", touchStartHandler);
-      window.removeEventListener("touchend", onMouseUp);
-      window.removeEventListener("resize", resize);
+      window.removeEventListener('mousemove', mouseMoveHandler);
+      canvasRef.current?.removeEventListener('mousedown', mouseMoveHandler);
+      window.removeEventListener('mouseup', onMouseUp);
+      window.removeEventListener('touchmove', touchMoveHandler);
+      canvasRef.current?.removeEventListener('touchstart', touchStartHandler);
+      window.removeEventListener('touchend', onMouseUp);
+      window.removeEventListener('resize', resize);
     };
   }, [onMouseMove, onMouseDown, onMouseUp, onResize]);
 

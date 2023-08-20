@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { MouseMove, Setup, Update, useCanvas } from "@hooks/useCanvas";
-import Boid from "@util/Boid";
-import Cursor from "@util/Cursor";
+import { MouseMove, Setup, Update, useCanvas } from '@hooks/useCanvas';
+import Boid from '@util/Boid';
+import Cursor from '@util/Cursor';
 
 const NUM_BOIDS = 80;
 
@@ -51,8 +51,8 @@ const Boids = () => {
   }
 
   function onResize(width: number, height: number) {
-    canvasRef.current?.setAttribute("width", width.toString());
-    canvasRef.current?.setAttribute("height", height.toString());
+    canvasRef.current?.setAttribute('width', width.toString());
+    canvasRef.current?.setAttribute('height', height.toString());
   }
 
   return (

@@ -1,7 +1,7 @@
 ---
 title: "Liar's Dice"
 description: "A pirate's game of betting and bluffing"
-image: "liars-dice/logo.jpg"
+image: 'liars-dice/logo.jpg'
 order: 2
 tags:
   - Construct

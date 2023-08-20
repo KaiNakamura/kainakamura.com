@@ -1,4 +1,4 @@
-import type { FC, HTMLAttributes, ReactNode } from "react";
+import type { FC, HTMLAttributes, ReactNode } from 'react';
 
 export interface TextProps extends HTMLAttributes<HTMLParagraphElement> {
   children?: ReactNode;

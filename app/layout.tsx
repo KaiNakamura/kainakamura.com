@@ -1,9 +1,9 @@
-import Footer from "@components/Footer";
-import NavBar from "@components/Navbar";
-import "@styles/globals.css";
+import Footer from '@components/Footer';
+import NavBar from '@components/Navbar';
+import '@styles/globals.css';
 
 export const metadata = {
-  title: "Kai Nakamura",
+  title: 'Kai Nakamura',
   description: "Kai Nakamura's Portfolio Website",
 };
 
