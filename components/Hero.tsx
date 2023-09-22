@@ -1,5 +1,8 @@
 import Boids from '@components/Boids';
+import { Link } from '@components/Link';
 import Image from 'next/image';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { HiMail } from 'react-icons/hi';
 
 export default function Hero() {
   return (
@@ -33,6 +36,19 @@ export default function Hero() {
         <div className="absolute bg-transparent w-0 h-0 left-[calc(50%-1px)] border-solid border-b-[75px] border-b-white border-l-[75px] border-l-transparent"></div>
         <div className="absolute w-[calc(50%+2px)] h-[75px] left-[calc(-75px)] bg-white"></div>
         <div className="absolute w-[calc(50%-75px+2px)] h-[75px] left-[calc(50%+75px-2px)] bg-white"></div>
+        <div className="absolute w-full h-[75px] flex flex-col">
+          <div className="max-w-3xl mx-auto px-8 w-full h-full flex items-end gap-2 xs:gap-4 sm:gap-6 invisible min-[300px]:visible">
+            <Link href="https://github.com/KaiNakamura">
+              <FaGithub className="text-gray-light text-xl min-[400px]:text-3xl sm:text-4xl transition duration-300 ease-int-out hover:-translate-y-1 hover:text-gray" />
+            </Link>
+            <Link href="https://www.linkedin.com/in/kaihnakamura/">
+              <FaLinkedin className="text-gray-light text-xl min-[400px]:text-3xl sm:text-4xl transition duration-300 ease-int-out hover:-translate-y-1 hover:text-gray" />
+            </Link>
+            <Link href="mailto:kaihnakamura@gmail.com">
+              <HiMail className="text-gray-light text-xl min-[400px]:text-3xl sm:text-4xl transition duration-300 ease-int-out hover:-translate-y-1 hover:text-gray" />
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );
