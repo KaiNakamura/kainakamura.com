@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { Link } from './Link';
 
 export interface NavButtonProps {
   text: string;
@@ -19,7 +19,6 @@ export default function NavButton({
           ? 'sm:text-2xl text-xl font-bold whitespace-nowrap text-red hover:underline'
           : 'sm:text-xl text-lg text-white hover:underline hover:text-blue'
       }
-      scroll={false}
     >
       {text}
     </Link>

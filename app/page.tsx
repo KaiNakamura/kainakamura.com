@@ -34,7 +34,7 @@ export default function Home() {
           <Text>
             Check out some of the cool stuff I&apos;ve been working on below. If
             you&apos;ve got any questions or are interested in working with me
-            feel free to <Link href="#contact">contact me</Link>.
+            feel free to <Link href="/#contact">contact me</Link>.
           </Text>
         </Section>
         <Section
