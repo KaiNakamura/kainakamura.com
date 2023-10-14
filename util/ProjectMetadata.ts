@@ -6,12 +6,11 @@ export interface ProjectMetadata {
   title: string;
   description: string;
   image: string;
+  hoverImage?: string;
+  bgColor?: string;
+  media?: string;
   order?: number;
   tags?: string[];
-  links?: {
-    text: string;
-    href: string;
-  };
 }
 
 export const getProjectMetadata = (): ProjectMetadata[] => {
@@ -25,9 +24,11 @@ export const getProjectMetadata = (): ProjectMetadata[] => {
       title: matterResult.data.title,
       description: matterResult.data.description,
       image: matterResult.data.image,
+      hoverImage: matterResult.data.hoverImage,
+      bgColor: matterResult.data.bgColor,
+      media: matterResult.data.media,
       order: matterResult.data.order == null ? 999999 : matterResult.data.order,
       tags: matterResult.data.tags,
-      links: matterResult.data.links,
     };
   });
   return projects.sort((a, b) => a.order - b.order);

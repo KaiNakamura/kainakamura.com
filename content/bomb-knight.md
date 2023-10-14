@@ -2,7 +2,9 @@
 title: 'Bomb Knight'
 description: 'A roguelike dungeon crawler with timed explosions'
 image: 'bomb-knight/logo.jpg'
-order: 1
+hoverImage: 'bomb-knight/gameplay.gif'
+bgColor: '#000000'
+order: 4
 tags:
   - Construct
 links:

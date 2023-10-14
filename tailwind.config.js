@@ -26,7 +26,11 @@ module.exports = {
       blue: '#379DC2',
       transparent: 'transparent',
     },
-    extend: {},
+    extend: {
+      aspectRatio: {
+        '5/4': '5 / 4',
+      },
+    },
   },
   plugins: [require('@tailwindcss/typography')],
 };

@@ -1,22 +1,40 @@
+'use client';
+
 import ProjectTag from '@components/ProjectTag';
 import { ProjectMetadata } from '@util/ProjectMetadata';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
 
 export interface CardProps {
   project: ProjectMetadata;
 }
 
 export default function Card({ project }: CardProps) {
+  const [hovered, setHovered] = useState(false);
+
   return (
     <Link href={'/project/' + project.id}>
-      <div className="bg-white h-full max-w-xs md:max-w-sm rounded-3xl overflow-hidden shadow-xl transition duration-300 ease-in-out hover:-translate-y-4 hover:-translate-x-0.5 hover:shadow-2xl">
-        <Image
-          src={'/' + project.image}
-          alt={project.title}
-          width={630}
-          height={500}
-        />
+      <div
+        className="bg-white h-full max-w-xs md:max-w-sm rounded-3xl overflow-hidden shadow-xl transition duration-300 ease-in-out hover:-translate-y-4 hover:-translate-x-0.5 hover:shadow-2xl"
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+      >
+        <div
+          className="relative aspect-5/4"
+          style={{ backgroundColor: project.bgColor }}
+        >
+          {project.hoverImage && hovered ? (
+            <Image
+              src={'/' + project.hoverImage}
+              alt={project.title}
+              fill
+              className="object-contain"
+            />
+          ) : (
+            <Image src={'/' + project.image} alt={project.title} fill />
+          )}
+        </div>
         <div className="flex flex-col gap-4 p-6">
           <div>
             <h1 className="font-bold text-base md:text-lg lg:text-xl xl:text-2xl">
@@ -26,7 +44,7 @@ export default function Card({ project }: CardProps) {
               {project.description}
             </p>
           </div>
-          <div>
+          <div className="flex flex-wrap gap-2">
             {project.tags &&
               project.tags.map((tag) => <ProjectTag key={tag} tag={tag} />)}
           </div>
