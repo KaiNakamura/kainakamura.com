@@ -1,11 +1,11 @@
 import { Link } from '@components/Link';
 import ProjectButton from '@components/ProjectButton';
+import ProjectMedia from '@components/ProjectMedia';
 import ProjectTag from '@components/ProjectTag';
 import { getProjectMetadata } from '@util/ProjectMetadata';
 import fs from 'fs';
 import matter from 'gray-matter';
-import Markdown from 'markdown-to-jsx';
-import Image from 'next/image';
+import { compiler } from 'markdown-to-jsx';
 
 const getProjectContent = (id: string) => {
   const folder = 'content/';
@@ -26,46 +26,41 @@ export default function Project(props: any) {
   const project = getProjectContent(id);
 
   return (
-    <section className="max-w-3xl mx-auto flex flex-col p-8">
-      <div className="flex flex-col gap-4 md:gap-8">
-        <div>
-          <h1 className="font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl pb-2 md:pb-4">
-            {project.data.title}
-          </h1>
+    <section className="max-w-3xl mx-auto flex flex-col p-8 gap-4 md:gap-8">
+      <div>
+        <h1 className="font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl pb-2 md:pb-4">
+          {project.data.title}
+        </h1>
+        <div className="flex flex-wrap gap-2">
           {project.data.tags &&
             project.data.tags.map((tag: string) => (
               <ProjectTag key={tag} tag={tag} />
             ))}
         </div>
-        <Image
-          src={'/' + project.data.image}
-          alt={project.data.title}
-          width={500}
-          height={500}
-          priority={true}
-          className="w-full"
-        />
-        <div>
-          {project.data.links &&
-            project.data.links.map((link: { text: string; href: string }) => (
-              <ProjectButton key={link.text} href={link.href}>
-                {link.text}
-              </ProjectButton>
-            ))}
-        </div>
+      </div>
+      <ProjectMedia
+        title={project.data.title}
+        media={project.data.media}
+        image={project.data.image}
+      />
+      <div className="flex flex-wrap gap-4">
+        {project.data.links &&
+          project.data.links.map((link: { text: string; href: string }) => (
+            <ProjectButton key={link.text} href={link.href}>
+              {link.text}
+            </ProjectButton>
+          ))}
       </div>
       <article className="prose sm:prose-base md:prose-lg lg:prose-xl xl:prose-2xl prose-p:text-gray-dark prose-headings:text-gray prose-a:text-blue">
-        <Markdown
-          options={{
-            overrides: {
-              a: {
-                component: Link,
-              },
+        {compiler(project.content, {
+          wrapper: null,
+          forceWrapper: true,
+          overrides: {
+            a: {
+              component: Link,
             },
-          }}
-        >
-          {project.content}
-        </Markdown>
+          },
+        })}
       </article>
     </section>
   );
