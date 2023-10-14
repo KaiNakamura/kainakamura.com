@@ -2,17 +2,20 @@ import type { AnchorHTMLAttributes, FC, ReactNode } from 'react';
 
 export interface LinkProps extends AnchorHTMLAttributes<Element> {
   href: string;
+  isInternalLink?: boolean;
   children?: ReactNode;
 }
 
 export const Link: FC<LinkProps> = ({
   href,
+  isInternalLink,
   children,
   rel,
   ...rest
 }: LinkProps) => {
-  const isInternalLink =
-    href.length > 0 && (href[0] === '/' || href[0] === '#');
+  if (isInternalLink == null) {
+    isInternalLink = href.length > 0 && (href[0] === '/' || href[0] === '#');
+  }
 
   if (isInternalLink) {
     return (
