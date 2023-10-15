@@ -4,7 +4,6 @@ import { Link } from '@components/Link';
 import { Section } from '@components/Section';
 import { Text } from '@components/Text';
 import { getProjectMetadata } from '@util/ProjectMetadata';
-import { FaGithub } from 'react-icons/fa';
 import { GrDocumentUser } from 'react-icons/gr';
 import { HiOutlineMail } from 'react-icons/hi';
 
