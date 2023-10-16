@@ -2,7 +2,7 @@
 title: 'Astral Fleet'
 description: 'A frantic arcade space shooter with plenty of powerups'
 image: 'astral-fleet/logo.jpg'
-hoverImage: 'astral-fleet/gameplay.gif'
+preview: 'astral-fleet/gameplay.gif'
 bgColor: '#09060E'
 order: 3
 tags:

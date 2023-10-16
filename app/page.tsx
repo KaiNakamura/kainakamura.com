@@ -1,6 +1,6 @@
-import Card from '@components/Card';
 import Hero from '@components/Hero';
 import { Link } from '@components/Link';
+import ProjectsSection from '@components/ProjectsSection';
 import { Section } from '@components/Section';
 import { Text } from '@components/Text';
 import { getProjectMetadata } from '@util/ProjectMetadata';
@@ -36,18 +36,7 @@ export default function Home() {
             feel free to <Link href="/#contact">contact me</Link>.
           </Text>
         </Section>
-        <Section
-          id="projects"
-          className="bg-white-dark px-8 py-16 md:py-24 lg:py-32 xl:py-40"
-        >
-          <div className="max-w-fit m-auto">
-            <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-16">
-              {projects.map((project) => (
-                <Card key={project.id} project={project} />
-              ))}
-            </div>
-          </div>
-        </Section>
+        <ProjectsSection projects={projects} />
         <Section
           id="contact"
           className="max-w-3xl m-auto flex flex-col gap-8 px-8 py-16 md:py-24 lg:py-32 xl:py-40"

@@ -2,7 +2,7 @@
 title: "Liar's Dice"
 description: "A pirate's game of betting and bluffing"
 image: 'liars-dice/logo.jpg'
-hoverImage: 'liars-dice/gameplay.gif'
+preview: 'liars-dice/gameplay.gif'
 bgColor: '#4E2A42'
 order: 5
 tags:

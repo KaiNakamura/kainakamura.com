@@ -6,7 +6,7 @@ export interface ProjectMetadata {
   title: string;
   description: string;
   image: string;
-  hoverImage?: string;
+  preview?: string;
   bgColor?: string;
   media?: string;
   order?: number;
@@ -24,7 +24,7 @@ export const getProjectMetadata = (): ProjectMetadata[] => {
       title: matterResult.data.title,
       description: matterResult.data.description,
       image: matterResult.data.image,
-      hoverImage: matterResult.data.hoverImage,
+      preview: matterResult.data.preview,
       bgColor: matterResult.data.bgColor,
       media: matterResult.data.media,
       order: matterResult.data.order == null ? 999999 : matterResult.data.order,

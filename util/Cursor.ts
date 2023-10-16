@@ -1,5 +1,6 @@
-import { MouseMove, Setup, Update } from '@hooks/useCanvas';
+import { MouseMove, Update } from '@hooks/useCanvas';
 import Vector from '@util/Vector';
+import isMobile from '@util/isMobile';
 
 export const CURSOR_RADIUS = 100;
 const ANIMATION_FRAMES = 12.0;
@@ -63,22 +64,6 @@ export default class Cursor {
   }
 
   updatePositionIfMobile() {
-    const isMobile = () => {
-      const toMatch = [
-        /Android/i,
-        /webOS/i,
-        /iPhone/i,
-        /iPad/i,
-        /iPod/i,
-        /BlackBerry/i,
-        /Windows Phone/i,
-      ];
-
-      return toMatch.some((toMatchItem) => {
-        return navigator.userAgent.match(toMatchItem);
-      });
-    };
-
     if (isMobile() && !this.mouseDown) {
       this.position.set(-CURSOR_RADIUS, -CURSOR_RADIUS);
     }
