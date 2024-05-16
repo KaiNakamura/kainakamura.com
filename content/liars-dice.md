@@ -4,7 +4,7 @@ description: "A pirate's game of betting and bluffing"
 image: 'liars-dice/logo.jpg'
 preview: 'liars-dice/gameplay.gif'
 bgColor: '#4E2A42'
-order: 5
+priority: 1
 tags:
   - Construct
 links:

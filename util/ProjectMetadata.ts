@@ -9,7 +9,7 @@ export interface ProjectMetadata {
   preview?: string;
   bgColor?: string;
   media?: string;
-  order?: number;
+  priority?: number;
   tags?: string[];
 }
 
@@ -27,9 +27,10 @@ export const getProjectMetadata = (): ProjectMetadata[] => {
       preview: matterResult.data.preview,
       bgColor: matterResult.data.bgColor,
       media: matterResult.data.media,
-      order: matterResult.data.order == null ? 999999 : matterResult.data.order,
+      priority:
+        matterResult.data.priority == null ? 0 : matterResult.data.priority,
       tags: matterResult.data.tags,
     };
   });
-  return projects.sort((a, b) => a.order - b.order);
+  return projects.sort((a, b) => b.priority - a.priority);
 };

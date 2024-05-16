@@ -4,7 +4,7 @@ description: 'A frantic arcade space shooter with plenty of powerups'
 image: 'astral-fleet/logo.jpg'
 preview: 'astral-fleet/gameplay.gif'
 bgColor: '#09060E'
-order: 3
+priority: 3
 tags:
   - Construct
 links:

@@ -4,7 +4,7 @@ description: 'A roguelike dungeon crawler with timed explosions'
 image: 'bomb-knight/logo.jpg'
 preview: 'bomb-knight/gameplay.gif'
 bgColor: '#000000'
-order: 4
+priority: 2
 tags:
   - Construct
 links:
