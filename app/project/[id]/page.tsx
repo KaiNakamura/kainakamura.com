@@ -1,3 +1,5 @@
+import Code from '@components/Code';
+import CodeWrapper from '@components/CodeWrapper';
 import { Link } from '@components/Link';
 import ProjectButton from '@components/ProjectButton';
 import ProjectMedia from '@components/ProjectMedia';
@@ -58,6 +60,14 @@ export default function Project(props: any) {
           overrides: {
             a: {
               component: Link,
+            },
+            pre: {
+              component: CodeWrapper,
+            },
+            code: {
+              component: (props) => (
+                <Code language="python" text={props.children} />
+              ),
             },
           },
         })}
