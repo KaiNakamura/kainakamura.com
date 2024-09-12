@@ -15,6 +15,7 @@
     "eslint": "8.51.0",
     "eslint-config-next": "^13.5.4",
     "gray-matter": "^4.0.3",
+    "kainakamura.com": "file:",
     "markdown-to-jsx": "^7.3.2",
     "next": "^13.5.4",
     "react": "^18.2.0",
