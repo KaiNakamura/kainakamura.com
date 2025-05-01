@@ -53,7 +53,7 @@ export default function Project(props: any) {
             </ProjectButton>
           ))}
       </div>
-      <article className="prose sm:prose-base md:prose-lg lg:prose-xl xl:prose-2xl prose-p:text-gray-dark prose-headings:text-gray prose-a:text-blue">
+      <article className="prose sm:prose-base md:prose-lg lg:prose-xl xl:prose-2xl prose-p:text-gray-dark prose-headings:text-gray prose-a:text-blue marker:text-gray-dark">
         {compiler(project.content, {
           wrapper: null,
           forceWrapper: true,

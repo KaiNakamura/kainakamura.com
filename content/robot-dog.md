@@ -37,7 +37,7 @@ The LiDAR allows us to map the environment and keep track of the robot's locatio
 
 ## Perception-Aware Contact Estimation (PACE)
 
-One unique advancement from our team is the use of terrain data to improve contact estimation, which we call **Perception-Aware Contact Estimation** or PACE for short. Normal contact estimation methods are capable of recognizing missteps or slips and adjusting accordingly. But with PACE, the robot can proactively make adjustments based on the anticipated terrain variations.
+One unique advancement from our team is the use of terrain data to improve contact estimation, which we call **Perception-Aware Contact Estimation** or **PACE** for short. Normal contact estimation methods are capable of recognizing missteps or slips and adjusting accordingly. But with PACE, the robot can proactively make adjustments based on the anticipated terrain variations.
 
 ![Terrain Height Variances Around Foothold](/robot-dog/pace.png)
 
