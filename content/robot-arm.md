@@ -1,10 +1,10 @@
 ---
 title: 'Robotic Arm'
-description: 'A 4-DOF serial robotic arm designed for pick-and-place'
+description: 'A 4-DOF robotic arm designed for pick-and-place'
 image: 'rbe3001/robot.jpg'
 preview: 'rbe3001/preview.gif'
 media: 'https://www.youtube.com/embed/f69PbA9I6qY'
-priority: 6
+priority: 7
 tags:
   - MATLAB
 links:

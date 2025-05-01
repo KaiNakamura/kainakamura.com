@@ -4,7 +4,7 @@ description: 'A low-cost Bluetooth MIDI controller designed for teaching scales 
 image: 'squidbox/squidbox.jpg'
 preview: 'squidbox/preview.gif'
 media: 'https://www.youtube.com/embed/pEfDtvxs44c'
-priority: 7
+priority: 6
 tags:
   - C++
 links:
