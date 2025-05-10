@@ -8,9 +8,9 @@ priority: 9
 tags:
   - ROS
   - C++
-# links:
-#   - text: View Full Report
-#     href: /todo
+links:
+  - text: View Full Report
+    href: /robot-dog/report.pdf
 ---
 
 This project presents a **comprehensive framework for real-time stair climbing**. The major contributions can be broken down into three main parts:
