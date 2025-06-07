@@ -19,8 +19,9 @@ export default function Home() {
           className="max-w-3xl m-auto flex flex-col gap-8 px-8 pt-14 pb-20"
         >
           <Text>
-            I&apos;m a student at <Link href="https://www.wpi.edu/">WPI</Link>{' '}
-            pursuing a double-major in{' '}
+            I&apos;m a robotics software engineer and hobbyist game developer. I
+            graduated from <Link href="https://www.wpi.edu/">WPI</Link> with a
+            degree in{' '}
             <Link href="https://www.wpi.edu/academics/departments/computer-science">
               Computer Science
             </Link>{' '}

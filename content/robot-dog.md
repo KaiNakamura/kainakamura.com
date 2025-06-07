@@ -53,6 +53,8 @@ Doing this, not only do we get a dynamic footstep plan, but we can also use the 
 
 ## Final Thoughts
 
+![WPI Undergraduate Research Projects Showcase 2025](/robot-dog/poster-presentation.jpg)
+
 This project was created by Wyatt Harris, Adam Kalayjian, Sean Lendrum, Jared Morgan, Kai Nakamura, and Owen Sullivan.
 
 Overall, our work offers valuable contributions in the field of legged robotics by enhancing the precision and reliability of navigating complex terrains.
